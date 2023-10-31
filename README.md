@@ -3,13 +3,13 @@
 start container
 
 ```bash
-# docker run -it ghcr.io/liubin/cabocha:main bash
+docker run -it ghcr.io/liubin/cabocha:main bash
 ```
 
 start python in container
 
 ```bash
-root@9af423b6cebc:/tmp# python
+python
 Python 2.7.18 (default, Jul  1 2022, 12:27:04) 
 [GCC 9.4.0] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
@@ -18,9 +18,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 use cabocha parsing string
 
 ```bash
->>> import CaboCha
->>> cp = CaboCha.Parser("-d 20_chuko -P UNIDIC")
->>> print(cp.parseToString("いづれの御時にか、女御、更衣あまたさぶらひたまひけるなかに、いとやむごとなき際にはあらぬが、すぐれて時めきたまふありけり"))
+import CaboCha
+cp = CaboCha.Parser("-d 20_chuko -P UNIDIC")
+print(cp.parseToString("いづれの御時にか、女御、更衣あまたさぶらひたまひけるなかに、いとやむごとなき際にはあらぬが、すぐれて時めきたまふありけり"))
+```
+
+will print
+
+```bash
                     いづれの-D                  
                     御時にか、-----------------D
                           女御、-D             |
